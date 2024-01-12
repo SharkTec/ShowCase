@@ -9,6 +9,7 @@ class QImage;
 
 class ImageReader
 {
+    ImageReader() = default;
 public:
     QImage readImage(const QString &filename) const;
 };

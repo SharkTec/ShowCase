@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     std::unique_ptr<MainWindowPresenter> mainPresenter = std::make_unique<MainWindowPresenter>();
 
     std::unique_ptr<MainWindow> mainWindow = std::make_unique<MainWindow>(mainPresenter.get());
+    mainPresenter->setMainWindow(mainWindow.get());
 
     mainWindow->show();
 

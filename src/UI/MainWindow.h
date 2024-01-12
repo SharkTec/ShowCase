@@ -25,25 +25,19 @@ public:
     MainWindow(const MainWindowPresenter* presenter, QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void loadImage();
-    void showFileDialog();
-    void filterImage();
+    void adjustImageSizeToWindow();
+    void setMainImage(const QImage* image);
+    void setImagePathLabelText(const QString& text);
+
+    QPixmap getCurrentImage() const;
 
 private:
     void initializeGUI();
     void initializeConnects();
 
-    void adjustImageSizeToWindow();
-    void setMainImage(QImage image);
-
     Ui::MainWindow *ui;
     QGraphicsScene *m_scene;
     QPixmap m_image;
-    QString m_imageFilepath;
-    std::unique_ptr<ImageReader> m_imageReader;
-    std::unique_ptr<ImageFilter> m_imageFilter;
     QMutex m_mutex;
-
     const MainWindowPresenter* m_presenter;
 };
