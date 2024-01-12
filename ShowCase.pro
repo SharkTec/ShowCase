@@ -24,19 +24,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        MainWindow.cpp \
-    ImageReader.cpp \
-    ImageFilter.cpp \
-    Logger.cpp \
-    MainWindowPresenter.cpp
+    src/UI/MainWindow.cpp \
+    src/UI/MainWindowPresenter.cpp \
+    src/Business/ImageReader.cpp \
+    src/Business/ImageFilter.cpp \
+    src/Business/Logger.cpp
 
-HEADERS  += MainWindow.h \
-    ImageReader.h \
-    ImageFilter.h \
-    Logger.h \
-    MainWindowPresenter.h
+HEADERS += src/UI/MainWindow.h \
+    src/UI/MainWindowPresenter.h \
+    src/Business/ImageReader.h \
+    src/Business/ImageFilter.h \
+    src/Business/Logger.h
 
-FORMS    += MainWindow.ui
+FORMS    += src/UI/MainWindow.ui
 
 INCLUDEPATH += D:\opencv\build\include
 

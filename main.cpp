@@ -1,5 +1,6 @@
-#include "MainWindow.h"
-#include "MainWindowPresenter.h"
+
+#include "src/UI/MainWindow.h"
+#include "src/UI/MainWindowPresenter.h"
 
 #include <QApplication>
 
@@ -9,7 +10,7 @@ int main(int argc, char *argv[])
 
     std::unique_ptr<MainWindowPresenter> mainPresenter = std::make_unique<MainWindowPresenter>();
 
-    std::unique_ptr<MainWindow> mainWindow = std::make_unique<MainWindow>();
+    std::unique_ptr<MainWindow> mainWindow = std::make_unique<MainWindow>(mainPresenter.get());
 
     mainWindow->show();
 

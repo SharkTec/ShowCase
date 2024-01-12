@@ -10,8 +10,8 @@
 #include <QMatrix3x3>
 
 
-#include "ImageReader.h"
-#include "ImageFilter.h"
+#include "src/Business/ImageReader.h"
+#include "src/Business/ImageFilter.h"
 
 MainWindow::MainWindow(const MainWindowPresenter* presenter, QWidget *parent) :
     QMainWindow(parent),
