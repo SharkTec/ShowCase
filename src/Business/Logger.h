@@ -19,6 +19,3 @@ public:
 
     void logMessage(const std::string& message);
 };
-
-Logger* Logger::s_instance = nullptr;
-std::mutex Logger::s_mutex;

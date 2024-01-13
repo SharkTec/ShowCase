@@ -3,14 +3,6 @@
 
 #include <QGraphicsScene>
 #include <QPixmap>
-#include <QDebug>
-#include <QFileDialog>
-#include <QFutureWatcher>
-#include <QtConcurrent/QtConcurrent>
-#include <QMatrix3x3>
-
-#include "src/Business/ImageReader.h"
-#include "src/Business/ImageFilter.h"
 
 MainWindow::MainWindow(const MainWindowPresenter* presenter, QWidget *parent) :
     QMainWindow(parent),

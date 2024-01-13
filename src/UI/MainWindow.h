@@ -12,8 +12,6 @@ class MainWindow;
 
 class QGraphicsScene;
 class QPixmap;
-class ImageReader;
-class ImageFilter;
 
 class MainWindowPresenter;
 

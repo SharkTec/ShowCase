@@ -1,6 +1,8 @@
 #include "MainWindowPresenter.h"
 #include "MainWindow.h"
 
+#include "src/Business/Logger.h"
+
 #include "src/Business/ImageReader.h"
 #include "src/Business/ImageFilter.h"
 
@@ -12,12 +14,15 @@
 void MainWindowPresenter::setMainWindow(MainWindow* mainWindow)
 {
     m_mainWindow = mainWindow;
+    Logger::getInstance()->logMessage("Setting main window.");
+    Logger::getInstance()->logMessage("Launching up.");
 }
 
 void MainWindowPresenter::loadImage()
 {
-    if(m_imageFilepath.isEmpty()){
-        qDebug() << tr("Image filepath is empty.");
+    if(m_imageFilepath.isEmpty())
+    {
+        Logger::getInstance()->logMessage("Image filepath is empty.");
         return;
     }
 
