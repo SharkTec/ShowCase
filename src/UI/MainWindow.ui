@@ -82,14 +82,14 @@
         <item>
          <widget class="QPushButton" name="scaleButton">
           <property name="text">
-           <string>rescale Image</string>
+           <string>fit image</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="filterButton">
           <property name="text">
-           <string>PushButton</string>
+           <string>filter image</string>
           </property>
          </widget>
         </item>

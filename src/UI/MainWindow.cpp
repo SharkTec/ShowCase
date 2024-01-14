@@ -4,8 +4,8 @@
 #include <QGraphicsScene>
 #include <QPixmap>
 
-MainWindow::MainWindow(const MainWindowPresenter* presenter, QWidget *parent) :
-    QMainWindow(parent),
+MainWindow::MainWindow(const MainWindowPresenter* presenter, QWidget *parent)
+    : QMainWindow(parent),
     ui(new Ui::MainWindow),
     m_scene(nullptr),
     m_image(QPixmap()),
@@ -30,6 +30,8 @@ void MainWindow::initializeGUI()
     ui->loadButton->setText(tr("Load image file"));
     ui->browseButton->setText(tr("Browse images"));
     ui->pathLabelText->setText(tr("Path:"));
+    ui->pathLabel->setText("No path selected yet.");
+    this->setWindowTitle("<< Super useful edge detector >>");
 }
 
 void MainWindow::initializeConnects()
@@ -55,9 +57,14 @@ void MainWindow::adjustImageSizeToWindow()
     ui->imageView->fitInView(m_scene->sceneRect(), Qt::KeepAspectRatio);
 }
 
-void MainWindow::setMainImage(const QImage* image)
+void MainWindow::setPathLabelText(const QString &text)
 {
-    m_image = QPixmap::fromImage(*image);
+    ui->pathLabel->setText(text);
+}
+
+void MainWindow::setMainImage(const QImage& image)
+{
+    m_image = QPixmap::fromImage(image);
 }
 
 void MainWindow::setImagePathLabelText(const QString& text)
@@ -65,7 +72,7 @@ void MainWindow::setImagePathLabelText(const QString& text)
     ui->pathLabel->setText(text);
 }
 
-QPixmap MainWindow::getCurrentImage() const
+QImage MainWindow::getMainImage() const
 {
-    return m_image;
+    return m_image.toImage();
 }

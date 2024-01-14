@@ -6,5 +6,6 @@ class QImage;
 class ImageFilter
 {
 public:
-    QImage filterImage(QImage sourceImage) const;
+    ImageFilter() = default;
+    QImage filterImage(QImage& sourceImage) const;
 };

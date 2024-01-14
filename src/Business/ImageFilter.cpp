@@ -3,7 +3,7 @@
 #include <QMatrix3x3>
 #include <QImage>
 
-QImage ImageFilter::filterImage(QImage srcImage) const
+QImage ImageFilter::filterImage(QImage& srcImage) const
 {
     //initialize resulting image with params of the source image
     QImage edges(srcImage.width(), srcImage.height(), srcImage.format());

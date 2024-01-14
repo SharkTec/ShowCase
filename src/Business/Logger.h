@@ -11,8 +11,10 @@ private:
     Logger() = default;
 
 public:
+    // no copying for singleton
     Logger(Logger& otherLogger) = delete;
 
+    // no assigning for singleton
     void operator=(const Logger&) = delete;
 
     static Logger* getInstance();

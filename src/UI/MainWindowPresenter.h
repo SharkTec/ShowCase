@@ -1,14 +1,12 @@
 #pragma once
 
 #include <QObject>
-#include <QMutex>
-#include <QPixmap>
+
+#include "src/Business/ImageUtilityProvider.h"
 
 class MainWindow;
-
-class ImageReader;
-class ImageFilter;
-class QPixmap;
+class MainWindowPresenterModel;
+class ImageUtilityProvider;
 
 class MainWindowPresenter : public QObject
 {
@@ -25,8 +23,9 @@ public slots:
 private:
     MainWindow* m_mainWindow;
     QString m_imageFilepath;
-    std::unique_ptr<ImageReader> m_imageReader;
-    std::unique_ptr<ImageFilter> m_imageFilter;
-    QMutex m_mutex;
-    QPixmap m_image;
+    std::unique_ptr<ImageUtilityProvider> m_imageUtilsProvider;
+
+    // see header of MainWindowPresenterModel for why this is commented
+
+    //MainWindowPresenterModel* m_model;
 };

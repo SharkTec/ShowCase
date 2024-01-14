@@ -1,41 +1,41 @@
 #pragma once
 
-#include <QMainWindow>
-#include <QMutex>
-
 #include "MainWindowPresenter.h"
+
+#include <QMainWindow>
 
 namespace Ui
 {
 class MainWindow;
 }
 
+class MainWindowPresenter;
 class QGraphicsScene;
 class QPixmap;
-
-class MainWindowPresenter;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(const MainWindowPresenter* presenter, QWidget *parent = nullptr);
-    ~MainWindow();
+    MainWindow(const MainWindowPresenter* presenter, QWidget* parent = nullptr);
+    virtual ~MainWindow();
 
-    void adjustImageSizeToWindow();
-    void setMainImage(const QImage* image);
+    void setMainImage(const QImage& image);
+    QImage getMainImage() const;
+
     void setImagePathLabelText(const QString& text);
 
-    QPixmap getCurrentImage() const;
+    void adjustImageSizeToWindow();
+
+    void setPathLabelText(const QString& text);
 
 private:
     void initializeGUI();
     void initializeConnects();
 
-    Ui::MainWindow *ui;
-    QGraphicsScene *m_scene;
+    Ui::MainWindow* ui;
+    QGraphicsScene* m_scene;
     QPixmap m_image;
-    QMutex m_mutex;
     const MainWindowPresenter* m_presenter;
 };

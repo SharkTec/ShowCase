@@ -24,17 +24,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
+    src/Business/ImageUtilityProvider.cpp \
     src/UI/MainWindow.cpp \
     src/UI/MainWindowPresenter.cpp \
     src/Business/ImageReader.cpp \
     src/Business/ImageFilter.cpp \
-    src/Business/Logger.cpp
+    src/Business/Logger.cpp \
+    src/UI/MainWindowPresenterModel.cpp
 
 HEADERS += src/UI/MainWindow.h \
+    src/Business/ImageUtilityProvider.h \
     src/UI/MainWindowPresenter.h \
     src/Business/ImageReader.h \
     src/Business/ImageFilter.h \
-    src/Business/Logger.h
+    src/Business/Logger.h \
+    src/UI/MainWindowPresenterModel.h
 
 FORMS    += src/UI/MainWindow.ui
 
